@@ -22,6 +22,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: emailservice
+  labels:
+    kube-monkey/enabled: enabled
+    kube-monkey/identifier: emailservice
+    kube-monkey/mtbf: '2'
+    kube-monkey/kill-mode: "kill-all"
 spec:
   selector:
     matchLabels:
@@ -30,6 +35,11 @@ spec:
     metadata:
       labels:
         app: emailservice
+        kube-monkey/enabled: enabled
+        kube-monkey/identifier: emailservice
+        kube-monkey/mtbf: '2'
+        kube-monkey/kill-mode: "kill-all"
+        kube-monkey/kill-value: '1'
     spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
@@ -90,6 +100,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: checkoutservice
+  labels:
+    kube-monkey/enabled: enabled
+    kube-monkey/identifier: checkoutservice
+    kube-monkey/mtbf: '2'
+    kube-monkey/kill-mode: "fixed"
+    kube-monkey/kill-value: '1'
 spec:
   selector:
     matchLabels:
@@ -98,6 +114,11 @@ spec:
     metadata:
       labels:
         app: checkoutservice
+        kube-monkey/enabled: enabled
+        kube-monkey/identifier: checkoutservice
+        kube-monkey/mtbf: '2'
+        kube-monkey/kill-mode: "fixed"
+        kube-monkey/kill-value: '1'
     spec:
       serviceAccountName: default
       securityContext:
@@ -169,6 +190,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: recommendationservice
+  labels:
+    kube-monkey/enabled: enabled
+    kube-monkey/identifier: recommendationservice
+    kube-monkey/mtbf: '2'
+    kube-monkey/kill-mode: "fixed"
+    kube-monkey/kill-value: '1'
 spec:
   selector:
     matchLabels:
@@ -177,6 +204,11 @@ spec:
     metadata:
       labels:
         app: recommendationservice
+        kube-monkey/enabled: enabled
+        kube-monkey/identifier: recommendationservice
+        kube-monkey/mtbf: '2'
+        kube-monkey/kill-mode: "fixed"
+        kube-monkey/kill-value: '1'
     spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
@@ -241,6 +273,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
+  labels:
+    kube-monkey/enabled: enabled
+    kube-monkey/identifier: frontend
+    kube-monkey/mtbf: '2'
+    kube-monkey/kill-mode: "fixed"
+    kube-monkey/kill-value: '1'
 spec:
   selector:
     matchLabels:
@@ -249,6 +287,11 @@ spec:
     metadata:
       labels:
         app: frontend
+        kube-monkey/enabled: enabled
+        kube-monkey/identifier: frontend
+        kube-monkey/mtbf: '2'
+        kube-monkey/kill-mode: "fixed"
+        kube-monkey/kill-value: '1'
       annotations:
         sidecar.istio.io/rewriteAppHTTPProbers: "true"
     spec:
@@ -351,6 +394,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: paymentservice
+  labels:
+    kube-monkey/enabled: enabled
+    kube-monkey/identifier: paymentservice
+    kube-monkey/mtbf: '2'
+    kube-monkey/kill-mode: "fixed"
+    kube-monkey/kill-value: '1'
 spec:
   selector:
     matchLabels:
@@ -359,6 +408,11 @@ spec:
     metadata:
       labels:
         app: paymentservice
+        kube-monkey/enabled: enabled
+        kube-monkey/identifier: paymentservice
+        kube-monkey/mtbf: '2'
+        kube-monkey/kill-mode: "fixed"
+        kube-monkey/kill-value: '1'
     spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
@@ -419,6 +473,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: productcatalogservice
+  labels:
+    kube-monkey/enabled: enabled
+    kube-monkey/identifier: productcatalogservice
+    kube-monkey/mtbf: '2'
+    kube-monkey/kill-mode: "fixed"
+    kube-monkey/kill-value: '1'
 spec:
   selector:
     matchLabels:
@@ -427,6 +487,11 @@ spec:
     metadata:
       labels:
         app: productcatalogservice
+        kube-monkey/enabled: enabled
+        kube-monkey/identifier: productcatalogservice
+        kube-monkey/mtbf: '2'
+        kube-monkey/kill-mode: "fixed"
+        kube-monkey/kill-value: '1'
     spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
@@ -487,6 +552,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cartservice
+  labels:
+    kube-monkey/enabled: enabled
+    kube-monkey/identifier: cartservice
+    kube-monkey/mtbf: '2'
+    kube-monkey/kill-mode: "fixed"
+    kube-monkey/kill-value: '1'
 spec:
   selector:
     matchLabels:
@@ -495,6 +566,11 @@ spec:
     metadata:
       labels:
         app: cartservice
+        kube-monkey/enabled: enabled
+        kube-monkey/identifier: cartservice
+        kube-monkey/mtbf: '2'
+        kube-monkey/kill-mode: "fixed"
+        kube-monkey/kill-value: '1'
     spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
@@ -552,6 +628,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: loadgenerator
+  labels:
+    kube-monkey/enabled: enabled
+    kube-monkey/identifier: loadgenerator
+    kube-monkey/mtbf: '2'
+    kube-monkey/kill-mode: "fixed"
+    kube-monkey/kill-value: '1'
 spec:
   selector:
     matchLabels:
@@ -561,6 +643,11 @@ spec:
     metadata:
       labels:
         app: loadgenerator
+        kube-monkey/enabled: enabled
+        kube-monkey/identifier: loadgenerator
+        kube-monkey/mtbf: '2'
+        kube-monkey/kill-mode: "fixed"
+        kube-monkey/kill-value: '1'
       annotations:
         sidecar.istio.io/rewriteAppHTTPProbers: "true"
     spec:
@@ -622,6 +709,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: currencyservice
+  labels:
+    kube-monkey/enabled: enabled
+    kube-monkey/identifier: currencyservice
+    kube-monkey/mtbf: '2'
+    kube-monkey/kill-mode: "fixed"
+    kube-monkey/kill-value: '1'
 spec:
   selector:
     matchLabels:
@@ -630,6 +723,11 @@ spec:
     metadata:
       labels:
         app: currencyservice
+        kube-monkey/enabled: enabled
+        kube-monkey/identifier: currencyservice
+        kube-monkey/mtbf: '2'
+        kube-monkey/kill-mode: "fixed"
+        kube-monkey/kill-value: '1'
     spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
@@ -691,6 +789,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: shippingservice
+  labels:
+    kube-monkey/enabled: enabled
+    kube-monkey/identifier: shippingservice
+    kube-monkey/mtbf: '2'
+    kube-monkey/kill-mode: "fixed"
+    kube-monkey/kill-value: '1'
 spec:
   selector:
     matchLabels:
@@ -699,6 +803,11 @@ spec:
     metadata:
       labels:
         app: shippingservice
+        kube-monkey/enabled: enabled
+        kube-monkey/identifier: shippingservice
+        kube-monkey/mtbf: '2'
+        kube-monkey/kill-mode: "fixed"
+        kube-monkey/kill-value: '1'
     spec:
       serviceAccountName: default
       securityContext:
@@ -759,6 +868,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: redis-cart
+  labels:
+    kube-monkey/enabled: enabled
+    kube-monkey/identifier: redis-cart
+    kube-monkey/mtbf: '2'
+    kube-monkey/kill-mode: "fixed"
+    kube-monkey/kill-value: '1'
 spec:
   selector:
     matchLabels:
@@ -767,6 +882,11 @@ spec:
     metadata:
       labels:
         app: redis-cart
+        kube-monkey/enabled: enabled
+        kube-monkey/identifier: redis-cart
+        kube-monkey/mtbf: '2'
+        kube-monkey/kill-mode: "fixed"
+        kube-monkey/kill-value: '1'
     spec:
       securityContext:
         fsGroup: 1000
@@ -824,6 +944,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: adservice
+  labels:
+    kube-monkey/enabled: enabled
+    kube-monkey/identifier: adservice
+    kube-monkey/mtbf: '2'
+    kube-monkey/kill-mode: "fixed"
+    kube-monkey/kill-value: '1'
 spec:
   selector:
     matchLabels:
@@ -832,6 +958,11 @@ spec:
     metadata:
       labels:
         app: adservice
+        kube-monkey/enabled: enabled
+        kube-monkey/identifier: adservice
+        kube-monkey/mtbf: '2'
+        kube-monkey/kill-mode: "fixed"
+        kube-monkey/kill-value: '1'
     spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
